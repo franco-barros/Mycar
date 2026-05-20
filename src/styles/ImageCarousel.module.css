@@ -1,0 +1,30 @@
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.inner {
+  display: flex;
+}
+
+.item {
+  flex-shrink: 0;
+  /* Imagen más grande en desktop: 500px de ancho, y en mobile 80vw */
+  width: 500px;
+  margin-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: 80vw;
+  }
+}
+
+.item img {
+  width: 100%;
+  /* Ajusta la altura para que se vea con buena calidad; usa object-fit: cover para recorte */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
