@@ -1,29 +1,183 @@
 .about {
   width: 100%;
   max-width: 1200px;
-  margin: 3rem auto;
+
+  margin: 4rem auto;
   padding: 4rem 2rem;
+
   text-align: center;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+
+  position: relative;
+  overflow: hidden;
+
+  /* NUEVO FONDO LIMPIO */
+  background:
+    radial-gradient(circle at top, rgba(0, 0, 0, 0.04), transparent 45%),
+    linear-gradient(180deg, #f5f5f5);
+}
+/* BADGE */
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.7rem 1.4rem;
+
+  margin-bottom: 1.8rem;
+
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #ffd700;
+
+  background: rgba(0, 0, 0, 0.88);
+
+  border: 1px solid rgba(255, 215, 0, 0.3);
+
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.25);
 }
 
+/* TITULO */
 .about h2 {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  color: #111;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+
+  font-weight: 900;
+
+  margin-bottom: 2.2rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 12px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(139, 0, 0, 0.35);
 }
 
+.about h2 span {
+  color: #ffd700;
+
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.2),
+    0 0 20px rgba(255, 215, 0, 0.12);
+}
+
+/* TARJETA */
+.card {
+  position: relative;
+
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  padding: 3rem 2.5rem;
+
+  border-radius: 28px;
+
+  background: rgba(90, 0, 0, 0.82);
+
+  border: 1px solid rgba(255, 215, 0, 0.15);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(139, 0, 0, 0.45);
+
+  overflow: hidden;
+}
+
+/* EFECTOS */
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0)
+  );
+
+  pointer-events: none;
+}
+
+.card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  border: 1px solid rgba(255, 255, 255, 0.04);
+
+  pointer-events: none;
+}
+
+/* TEXTOS */
 .about p {
-  font-size: 1.125rem;
-  line-height: 1.8;
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 1.05rem;
+
+  line-height: 1.9;
+
   margin-bottom: 1.5rem;
-  max-width: 800px;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  max-width: 780px;
+
   margin-left: auto;
   margin-right: auto;
-  color: #444;
+}
+
+.about strong {
+  color: #ffd700;
+
+  font-weight: 700;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .card {
+    padding: 2rem 1.4rem;
+
+    border-radius: 22px;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+  }
+
+  .badge {
+    font-size: 0.75rem;
+
+    letter-spacing: 1px;
+
+    padding: 0.6rem 1rem;
+  }
 }

@@ -1,0 +1,146 @@
+.wrapper {
+  width: 100%;
+  padding: 5rem 1.5rem;
+  overflow: hidden;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at top, rgba(139, 0, 0, 0.18), transparent 45%),
+    linear-gradient(to bottom, #000000, #0a0a0a, #111111);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+
+  color: #ffd700;
+}
+
+.carouselWrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  padding: 1rem 0;
+
+  cursor: grab;
+}
+
+.logoBox {
+  flex: 0 0 auto;
+
+  width: 220px;
+  height: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.2rem;
+
+  background: linear-gradient(145deg, #1a1a1a, #101010);
+
+  border: 1px solid rgba(255, 215, 0, 0.14);
+
+  border-radius: 22px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+
+  transition: all 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logoBox:hover {
+    transform: translateY(-8px) scale(1.06);
+
+    background: linear-gradient(145deg, #8b0000, #1a1a1a);
+
+    border: 1px solid rgba(255, 215, 0, 0.3);
+
+    box-shadow: 0 18px 40px rgba(139, 0, 0, 0.35);
+
+    z-index: 5;
+  }
+}
+
+.logo {
+  max-width: 170px;
+  max-height: 80px;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  filter: brightness(1);
+}
+
+.carouselWrapper::before,
+.carouselWrapper::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  width: 90px;
+  height: 100%;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.carouselWrapper::before {
+  left: 0;
+
+  background: linear-gradient(to right, #000000, transparent);
+}
+
+.carouselWrapper::after {
+  right: 0;
+
+  background: linear-gradient(to left, #000000, transparent);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+
+    margin-bottom: 2rem;
+  }
+
+  .carouselWrapper::before,
+  .carouselWrapper::after {
+    display: none;
+  }
+
+  .track {
+    gap: 1.2rem;
+
+    padding: 0.5rem 0;
+  }
+
+  .logoBox {
+    width: 180px;
+    height: 105px;
+
+    padding: 0.9rem;
+
+    background: linear-gradient(145deg, #161616, #0d0d0d);
+
+    border: 1px solid rgba(255, 215, 0, 0.1);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  }
+
+  .logo {
+    max-width: 140px;
+    max-height: 65px;
+  }
+}

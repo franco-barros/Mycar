@@ -1,13 +1,18 @@
 "use client";
 
 import React from "react";
-import { FaInstagram, FaPhoneAlt, FaEnvelope, FaUsers } from "react-icons/fa";
+
+import { FaInstagram, FaPhoneAlt, FaEnvelope, FaCar } from "react-icons/fa";
+
 import { usePathname } from "next/navigation";
+
 import styles from "../../styles/Footer.module.css";
 
 const Footer = () => {
   const pathname = usePathname();
+
   const isHome = pathname === "/";
+
   const isAdmin = pathname.startsWith("/admin");
 
   if (isAdmin) return null;
@@ -17,56 +22,65 @@ const Footer = () => {
     id: string,
   ) => {
     e.preventDefault();
+
     const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
+
+    section?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.content}>
-        {/* Presentación */}
+        {/* PRESENTACIÓN */}
         <div className={styles.section}>
           <h3 className={styles.title}>
-            <FaUsers className={styles.iconLeaf} />
-            Brigadas Educativas Comunitaria
+            <FaCar className={styles.iconLeaf} />
+            MV Car Detail
           </h3>
+
           <p className={styles.description}>
-            Somos una organización comunitaria que promueve la educación
-            popular, la inclusión y el desarrollo de los barrios desde la
-            solidaridad.
+            Especialistas en estética vehicular, detailing y tratamientos
+            premium para proteger, restaurar y potenciar la apariencia de tu
+            vehículo.
           </p>
         </div>
 
         {isHome && (
           <>
-            {/* Links */}
+            {/* LINKS */}
             <div className={styles.section}>
-              <h4 className={styles.subtitle}>Enlaces</h4>
+              <h4 className={styles.subtitle}>Navegación</h4>
+
               <ul className={styles.list}>
                 <li>
                   <a
-                    href="#aboutus"
-                    onClick={(e) => handleInternalLinkClick(e, "aboutus")}
+                    href="#hero"
+                    onClick={(e) => handleInternalLinkClick(e, "hero")}
                   >
-                    Quiénes somos
+                    Inicio
                   </a>
                 </li>
+
                 <li>
                   <a
-                    href="#whatwedo"
-                    onClick={(e) => handleInternalLinkClick(e, "whatwedo")}
+                    href="#services"
+                    onClick={(e) => handleInternalLinkClick(e, "services")}
                   >
-                    Qué hacemos
+                    Servicios
                   </a>
                 </li>
+
                 <li>
                   <a
-                    href="#participate"
-                    onClick={(e) => handleInternalLinkClick(e, "participate")}
+                    href="#about"
+                    onClick={(e) => handleInternalLinkClick(e, "about")}
                   >
-                    Cómo participar
+                    Nosotros
                   </a>
                 </li>
+
                 <li>
                   <a
                     href="#contact"
@@ -78,33 +92,39 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* CONTACTO */}
             <div className={styles.section}>
               <h4 className={styles.subtitle}>Contacto</h4>
+
               <p className={styles.contact}>
-                <FaPhoneAlt /> +54 9 264 585-6333
+                <FaPhoneAlt />
+                +54 9 264 585-6333
               </p>
+
               <p className={styles.contact}>
-                <FaEnvelope /> brigadaseducativas.ccion@gmail.com
+                <FaEnvelope />
+                contacto@mvcardetail.com
               </p>
+
               <a
-                href="https://www.instagram.com/brigadaseducativas.sj"
+                href="https://www.instagram.com/mv.cardetail"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.contact}
                 aria-label="Instagram"
               >
-                <FaInstagram /> @brigadaseducativas.sj
+                <FaInstagram />
+                @mv.cardetail
               </a>
             </div>
           </>
         )}
       </div>
 
-      {/* Foot page */}
+      {/* FOOTER INFERIOR */}
       <div className={styles.bottomBar}>
         <p className={styles.copy}>
-          © 2024 Brigada Educativa Comunitaria. Todos los derechos reservados.
+          © 2026 MV Car Detail. Todos los derechos reservados.
         </p>
       </div>
     </footer>

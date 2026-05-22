@@ -1,6 +1,9 @@
 "use client";
+
 import { motion } from "framer-motion";
-import ImageCarousel from "../imagecarrousel/ImageCarousel"; // Ajusta la ruta según tu estructura
+
+import ImageCarousel from "../imagecarrousel/ImageCarousel";
+
 import styles from "../../styles/About.module.css";
 
 const MotionSection = motion.section;
@@ -10,31 +13,55 @@ const About = () => {
     <MotionSection
       id="about"
       className={styles.about}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      initial={{
+        opacity: 0,
+        y: 50,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 1,
+        ease: "easeOut",
+      }}
     >
-      <h2>Sobre Nosotros</h2>
-      <p>
-        En <strong>LT Estética Vehicular</strong> nos dedicamos a cuidar y
-        preservar la estética de tu vehículo, prolongando la vida útil de cada
-        componente mediante selladores de alta calidad.
-      </p>
-      <p>
-        Con <strong>Sacabollos</strong> realizamos reparaciones artesanales,
-        evitando métodos invasivos como masillas o soldaduras, y dejando tu auto
-        en condiciones óptimas.
-      </p>
-      <p>
-        Nuestro taller, liderado por <strong>Lautaro Tello</strong>, un joven
-        apasionado que inició en 2019 y ya ha tratado más de 150 vehículos,
-        combina formación continua y experiencia para brindar el mejor servicio.
-      </p>
-      <p>
-        Además, en esta temporada de <strong>granizo</strong> implementamos
-        soluciones especializadas para restaurar y proteger tu auto de los
-        daños, asegurando un cuidado integral.
-      </p>
+      <div className={styles.badge}>Sobre nosotros</div>
+
+      <h2>
+        <span>My Car Detail</span>
+      </h2>
+
+      <div className={styles.card}>
+        <p>
+          En <strong>My Car Detail</strong> trabajamos con pasión por los
+          vehículos, ofreciendo servicios de estética vehicular diseñados para
+          restaurar, proteger y mantener cada detalle de tu auto en condiciones
+          impecables.
+        </p>
+
+        <p>
+          Nuestro taller está liderado por <strong>Maxi Villegas</strong>,
+          especializado en detailing, tratamientos de protección, pulidos,
+          abrillantados y restauración estética de vehículos.
+        </p>
+
+        <p>
+          Utilizamos productos de alta calidad y técnicas profesionales para
+          lograr acabados premium, cuidando tanto la estética como la
+          conservación de cada superficie.
+        </p>
+
+        <p>
+          Creemos que cada vehículo merece un tratamiento único, por eso
+          trabajamos con dedicación, precisión y atención en cada detalle para
+          entregar resultados que realmente marquen la diferencia.
+        </p>
+      </div>
+
       <ImageCarousel />
     </MotionSection>
   );

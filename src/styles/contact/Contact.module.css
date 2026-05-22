@@ -1,0 +1,384 @@
+/* Contact.module.css */
+
+.contact {
+  width: 100%;
+
+  background: #000;
+
+  color: white;
+
+  padding: 4rem 1.5rem;
+
+  scroll-margin-top: 45px;
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.5rem;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+.badgeWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  background: linear-gradient(135deg, #ffd700, #c9a227);
+
+  padding: 0.35rem 0.9rem;
+
+  border-radius: 999px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  color: #111;
+}
+
+.title {
+  text-align: center;
+
+  font-size: 2.5rem;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.title span:first-child {
+  color: #ffffff;
+}
+
+.title span:last-child {
+  color: #ffd700;
+}
+
+.formWrapper {
+  max-width: 720px;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  background: linear-gradient(145deg, #1a1a1a, #121212);
+
+  border: 1px solid rgba(255, 215, 0, 0.15);
+
+  border-radius: 18px;
+
+  padding: 2.5rem 2rem;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.45rem;
+}
+
+.labelWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  color: #ffd700;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+
+  padding: 0.85rem 1rem;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #191919;
+
+  color: white;
+
+  font-size: 0.95rem;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #8d8d8d;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+
+  border-color: #ffd700;
+
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.12);
+}
+
+.formGroup textarea {
+  resize: vertical;
+
+  min-height: 120px;
+}
+
+.submitButton {
+  align-self: center;
+
+  background: linear-gradient(135deg, #8b0000, #c40000);
+
+  color: white;
+
+  border: none;
+
+  padding: 0.9rem 2.5rem;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 20px rgba(196, 0, 0, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid white;
+
+  border-top: 2px solid transparent;
+
+  border-radius: 50%;
+
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* CONTACTOS */
+
+.contactGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.5rem;
+}
+
+.personCard {
+  background: linear-gradient(145deg, #171717, #101010);
+
+  border: 1px solid rgba(255, 215, 0, 0.12);
+
+  border-radius: 18px;
+
+  padding: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.personCard:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+
+  color: #ffd700;
+
+  margin-bottom: 0.8rem;
+}
+
+.personName {
+  font-size: 1.05rem;
+
+  font-weight: 700;
+
+  color: white;
+
+  margin-bottom: 0.35rem;
+}
+
+.personPhone {
+  color: #ffd700;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.personPhone:hover {
+  text-decoration: underline;
+}
+
+/* INSTAGRAM */
+
+.instagramCard {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  padding: 3rem 2rem;
+
+  background: linear-gradient(135deg, #8b0000, #111111, #ffd700);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  gap: 1rem;
+}
+
+.instagramCardIcon {
+  position: absolute;
+
+  right: 1rem;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  opacity: 0.1;
+}
+
+.instagramCardText {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 600px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.7;
+}
+
+.instagramCardButton {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: white;
+
+  color: #8b0000;
+
+  text-decoration: none;
+
+  padding: 0.8rem 1.5rem;
+
+  border-radius: 12px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.instagramCardButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carouselContactWrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .contactGrid {
+    display: none;
+  }
+
+  .carouselContactWrapper {
+    display: block;
+
+    margin-top: 1rem;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+
+  .instagramCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .formWrapper {
+    padding: 2rem 1.25rem;
+  }
+}

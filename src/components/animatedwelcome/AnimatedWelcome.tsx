@@ -1,18 +1,25 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import styles from "../../styles/AnimatedWelcome.module.css";
+"use client";
 
-const messages = ["¡Bienvenido a !", "¡Gracias por elegirnos!"];
+import React from "react";
+
+import { motion, AnimatePresence } from "framer-motion";
+
+import styles from "../../styles/hero/AnimatedWelcome.module.css";
+
+const messages = [
+  "BIENVENIDO A MY CAR DETAIL",
+  "ESTETICA VEHICULAR DE CALIDAD ",
+];
 
 export default function AnimatedWelcome() {
   const [index, setIndex] = React.useState(0);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setIndex(1);
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev === messages.length - 1 ? 0 : prev + 1));
     }, 4000);
 
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -21,10 +28,25 @@ export default function AnimatedWelcome() {
         <motion.div
           key={index}
           className={styles.message}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            y: -25,
+            filter: "blur(10px)",
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+          }}
+          exit={{
+            opacity: 0,
+            y: 25,
+            filter: "blur(10px)",
+          }}
+          transition={{
+            duration: 0.9,
+            ease: "easeOut",
+          }}
         >
           {messages[index]}
         </motion.div>

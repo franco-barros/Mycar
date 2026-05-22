@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 140px;
+
+  margin-top: 10px;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.message {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-wrap: break-word;
+
+  font-size: clamp(2rem, 5vw, 4.2rem);
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+  line-height: 1.1;
+
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #ffd700 40%,
+    #ffae00 60%,
+    #ffffff 100%
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.35),
+    0 0 25px rgba(139, 0, 0, 0.3);
+
+  padding: 0 1rem;
+}
+
+/* LÍNEA DECORATIVA */
+.message::after {
+  content: "";
+
+  display: block;
+
+  width: 120px;
+  max-width: 60%;
+
+  height: 4px;
+
+  margin: 1rem auto 0;
+
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #8b0000, #ffd700, #8b0000);
+
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 110px;
+
+    padding: 0 0.5rem;
+  }
+
+  .message {
+    font-size: clamp(1.5rem, 7vw, 2.6rem);
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.2;
+
+    padding: 0;
+  }
+
+  .message::after {
+    width: 80px;
+
+    margin-top: 0.8rem;
+  }
+}

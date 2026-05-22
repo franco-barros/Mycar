@@ -1,17 +1,26 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Settings, X } from "lucide-react";
 import styles from "../../styles/Navbar.module.css";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const handleLinkClick = () => setIsOpen(false);
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.logoContainer}>
-        <img src="/Lt.logo.png" alt="Logo LT" className={styles.logo} />
+        <Image
+          src="/mycar1.png"
+          alt="Logo MyCar"
+          width={120}
+          height={120}
+          className={styles.logo}
+          priority
+        />
       </div>
 
       {/* Menú de escritorio */}
@@ -21,24 +30,33 @@ export const Navbar = () => {
             Inicio
           </a>
         </li>
+
         <li>
           <a href="#about" onClick={handleLinkClick}>
             Nosotros
           </a>
         </li>
+
         <li>
           <a href="#services" onClick={handleLinkClick}>
             Servicios
           </a>
         </li>
+
         <li>
-          <a href="#instagramprofile" onClick={handleLinkClick}>
+          <a href="#products" onClick={handleLinkClick}>
+            Productos
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact" onClick={handleLinkClick}>
             Contacto
           </a>
         </li>
       </ul>
 
-      {/* Botón de menú móvil con animación */}
+      {/* Botón menú mobile */}
       <motion.button
         className={styles.menuButton}
         onClick={() => setIsOpen(!isOpen)}
@@ -52,7 +70,7 @@ export const Navbar = () => {
         )}
       </motion.button>
 
-      {/* Menú móvil desplegable */}
+      {/* Menú mobile */}
       <AnimatePresence>
         {isOpen && (
           <motion.ul
@@ -67,16 +85,19 @@ export const Navbar = () => {
                 Inicio
               </a>
             </li>
+
             <li>
               <a href="#about" onClick={handleLinkClick}>
                 Nosotros
               </a>
             </li>
+
             <li>
               <a href="#services" onClick={handleLinkClick}>
                 Servicios
               </a>
             </li>
+
             <li>
               <a href="#instagramprofile" onClick={handleLinkClick}>
                 Contacto
